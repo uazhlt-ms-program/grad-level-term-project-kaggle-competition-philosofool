@@ -13,8 +13,7 @@ RUN apt-get update && apt-get install -y \
 
 # Upgrade pip
 RUN python -m pip install --upgrade pip
-RUN pip install --no-cache-dir pandas ipykernel numpy pytest matplotlib scikit-learn
-RUN pip install --no-cache-dir kaggle
+RUN pip install --no-cache-dir pandas ipykernel numpy pytest matplotlib scikit-learn, jsonlines, kaggle
 
 # Create non-root user (matches host UID)
 ARG USERNAME=vscode
