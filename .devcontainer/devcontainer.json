@@ -1,0 +1,39 @@
+// Sample dev container file.
+// Copy this to 'devcontainer.json' and it should configure your local
+// dev container environment for pytorch development.
+{
+  "name": "python-slim",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "remoteUser": "vscode",
+  // Uncomment to enable GPUs if they are available on your host machine.
+  // "runArgs": ["--gpus" "all"],
+  "remoteEnv": {
+  //   "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}"
+      "KAGGLE_AIP_TOKEN": "{localEnv:KAGGLE_API_TOKEN}"
+  },
+  "runArgs": [
+    "--add-host=host.docker.internal:host-gateway"
+  ],
+  // "postCreateCommand": "pip install --upgrade pip  && pip install -e .",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "python.analysis.autoImportCompletions": true,
+        "python.analysis.typeCheckingMode": "basic"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  }
+}
