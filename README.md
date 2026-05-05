@@ -15,3 +15,9 @@ The competition is hosted at [https://www.kaggle.com/competitions/ling-539-compe
 - You are encouraged, but not obligated, to use Python
 - You may delete or alter any files in this repository
 - You are free to add dependencies, **however**, ensure that your code can be installed/used on another machine running Linux or MacOS (consider containerizing your project with Docker or an equivalent technology)
+
+# Installation
+
+The simplest process to use this is to connect to the docker container.
+If you use VSCode, it should be as simple as `Ctrl + Shft + P > Reopen in Container`.
+The dockerfile and devcontainer specification are in `.devcontainer`.
